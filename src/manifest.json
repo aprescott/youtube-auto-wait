@@ -1,7 +1,7 @@
 {
   "name": "YouTube Auto Wait",
   "version": "0.0.1",
-  "description": "Disable YouTube autoplay while a video is playing already. After the video has finished playing, renable autoplaying.",
+  "description": "Disable YouTube autoplay while a video is playing already. After the video has finished playing, renable autoplaying. For the source code, go to http://github.com/symbol/youtube-auto-wait",
   "content_scripts": [
     {
       "matches": [
