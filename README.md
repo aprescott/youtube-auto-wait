@@ -8,7 +8,7 @@ Different players
 
 If you have HTML5 videos enabled on YouTube, when the video is paused or finishes playing, any additional videos you open up will continue to autoplay as usual. If you close the window while the video is still playing, that's okay too!
 
-If you're using the regular Flash YouTube player, the autoplay switch will only be disabled when you close the tab it's playing in.
+If you're using the regular Flash YouTube player, the autoplay switch will only be re-enabled when you close the tab it's playing in.
 
 If you can, [go with HTML5](http://www.youtube.com/html5).
 
