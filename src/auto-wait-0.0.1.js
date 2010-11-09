@@ -1,9 +1,6 @@
 var WAITING = 1;
 var NOT_WAITING = 0;
 
-// default to not waiting.
-// this should be more fancy; pick up on any youtube tabs etc.
-
 function status() {
   return localStorage["__auto-wait"];
 }
