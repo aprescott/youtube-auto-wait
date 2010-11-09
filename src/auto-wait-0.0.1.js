@@ -44,10 +44,6 @@ function video_paused() {
   setNotWaiting();
 }
 
-function video_ended() {
-  setNotWaiting();
-}
-
 function pause_video(v) {
   if (html5) {
     v.pause();
@@ -77,7 +73,6 @@ function modify_video(v) {
   correct_autoplay(v);
   v.addEventListener("play", video_played, false);
   v.addEventListener("pause", video_paused, false);
-  v.addEventListener("ended", video_ended, false);
 }
 
 html5 = document.getElementsByClassName("video-stream")[0];
