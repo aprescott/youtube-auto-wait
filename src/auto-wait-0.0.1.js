@@ -22,11 +22,11 @@ function setNotWaiting() {
 }
 
 function setDefaultStatus() {
-	setWaiting();
+  setWaiting();
 }
 
 function firstTime() {
-	return status() == null;
+  return status() == null;
 }
 
 if (firstTime()) {
