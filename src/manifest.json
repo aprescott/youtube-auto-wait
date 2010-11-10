@@ -5,7 +5,7 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*.youtube.com/watch?v=*"
+        "http://*.youtube.com/watch?v=*", "http://*.youtube.com/watch?*&v=*"
       ],
       "js": ["auto-wait-0.0.1.js"],
       "run_at": "document_end"
