@@ -1,44 +1,57 @@
-var WAITING = 1;
-var NOT_WAITING = 0;
-
-function status() {
-  return localStorage["__auto-wait"];
+function query_string_to_map(string) {
+  array = string.substring(1, string.length).split("&");
+  query_map = {};
+  for(var i in array) {
+    w = array[i].split("=");
+    query_map[w[0]] = w[1];
+  }
+  return query_map;
 }
 
-function setStatus(st) {
-  localStorage["__auto-wait"] = st;
+function current_video_identifier() {
+  return query_string_to_map(window.location.search)["v"];
+}
+
+function currently_playing() {
+  return localStorage["__auto-wait-identifier"];
+}
+
+function set_playing(identifier) {
+  localStorage["__auto-wait-identifier"] = identifier;
 }
 
 function isWaiting() {
-  return (status() == WAITING);
+  return (!!currently_playing());
 }
 
 function setWaiting() {
-  setStatus(WAITING);
+  if (!isWaiting()) {
+    set_playing(current_video_identifier());
+  }
 }
 
 function setNotWaiting() {
-  setStatus(NOT_WAITING);
-}
-
-function setDefaultStatus() {
-  setWaiting();
+  set_playing("");
 }
 
 function firstTime() {
-  return status() == null;
+  return currently_playing() == null;
 }
 
 if (firstTime()) {
-  setWaiting();
+  setNotWaiting();
 }
 
 function video_played() {
-  setWaiting();
+  if (!isWaiting()) {
+    setWaiting();
+  }
 }
 
 function video_paused() {
-  setNotWaiting();
+  if (currently_playing() == current_video_identifier()) {
+    setNotWaiting();
+  }
 }
 
 function pause_video(v) {
@@ -59,7 +72,7 @@ function disable_autoplay(v) {
 }
 
 function correct_autoplay(v) {
-  if (isWaiting()) {
+  if (isWaiting() && currently_playing() != current_video_identifier()) {
     disable_autoplay(v);
   } else {
     enable_autoplay(v);
@@ -78,13 +91,13 @@ flash = document.getElementById("movie_player");
 video = flash || html5
 
 if (flash) {
-  setTimeout(function() { if (isWaiting()) { video.pauseVideo(); } else { setWaiting(); } }, 1000);
+  setTimeout(function() { if (isWaiting() && currently_playing() != current_video_identifier()) { video.pauseVideo(); } else { setWaiting(); } }, 1000);
 } else {
   modify_video(video);
 }
 
 if (flash) {
-  window.onbeforeunload = function() { pause_video(video); setNotWaiting(); }
+  window.onbeforeunload = function() { video_paused(); pause_video(video); }
 } else {
   window.onbeforeunload = function() { pause_video(video); };
 }
