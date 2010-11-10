@@ -1,6 +1,6 @@
 {
   "name": "YouTube Auto Wait",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Disable YouTube autoplay while a video is playing already.",
   "content_scripts": [
     {

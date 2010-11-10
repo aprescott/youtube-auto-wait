@@ -1,0 +1,5 @@
+0.0.2
+
+* Use a less naive way of seeing if a video is currently being played, by looking at video IDs.
+* Fix issues with opening up more than one video and them failing to be automatically paused.
+* Match URLs where v is not the first query parameter.
