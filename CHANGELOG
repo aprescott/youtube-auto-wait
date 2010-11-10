@@ -1,3 +1,7 @@
+0.0.3
+
+* Fix glaring omission of updating the .js filename in the manifest.
+
 0.0.2
 
 * Use a less naive way of seeing if a video is currently being played, by looking at video IDs.
