@@ -17,6 +17,8 @@ If you can, [go with HTML5](http://www.youtube.com/html5).
 How to use
 ----------
 
+You can find the extension at the [Chrome extensions website](https://chrome.google.com/extensions/detail/ondhgaghnhjfcdgggmnagfhleojgdfhc).
+
 If you'd like to get the extension installed locally, you can follow step 4 of the [Getting Started guide](http://code.google.com/chrome/extensions/getstarted.html) on the Google Code website, and use the `src/` directory as the extension directory.
 
 Issues
