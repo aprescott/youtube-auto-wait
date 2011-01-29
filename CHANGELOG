@@ -1,3 +1,7 @@
+0.0.4
+
+* Fix a bug where videos stopped being paused at all. (Issue #2)
+
 0.0.3
 
 * Fix glaring omission of updating the .js filename in the manifest.
