@@ -34,14 +34,6 @@ function setNotWaiting() {
   set_playing("");
 }
 
-function firstTime() {
-  return currently_playing() == null;
-}
-
-if (firstTime()) {
-  setNotWaiting();
-}
-
 function video_played() {
   if (!isWaiting()) {
     setWaiting();
