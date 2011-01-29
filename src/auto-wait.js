@@ -1,5 +1,5 @@
 function query_string_to_map(string) {
-  array = string.substring(1, string.length).split("&");
+  array = string.substring(1, string.length).split(/[&;]/);
   query_map = {};
   for(var i in array) {
     w = array[i].split("=");
