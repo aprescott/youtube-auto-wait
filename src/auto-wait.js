@@ -31,7 +31,7 @@ function setWaiting() {
 }
 
 function setNotWaiting() {
-  set_playing("");
+  set_playing(null);
 }
 
 function video_played() {
