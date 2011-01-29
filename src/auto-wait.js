@@ -90,6 +90,12 @@ flash = document.getElementById("movie_player");
 
 video = flash || html5
 
+// If the currently_playing identifier is the empty string, no videos
+// will be paused.
+if (currently_playing() != null && currently_playing.length == 0) {
+	set_playing(null);
+}
+
 if (flash) {
   setTimeout(function() { if (isWaiting() && currently_playing() != current_video_identifier()) { video.pauseVideo(); } else { setWaiting(); } }, 1000);
 } else {
