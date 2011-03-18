@@ -1,3 +1,7 @@
+0.0.5
+
+* Change extension name to "Autowait for YouTube" for branding guideline compliance.
+
 0.0.4
 
 * Fix a bug where videos stopped being paused at all. (Issue #2)

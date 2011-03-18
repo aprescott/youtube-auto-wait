@@ -1,6 +1,6 @@
 {
   "name": "Autowait for YouTube",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Disable YouTube autoplay while a video is playing already.",
   "icons": {
     "16": "icons/icon-16x16.png",
